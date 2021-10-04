@@ -10,8 +10,8 @@ html {
 }
 
 body {
-  color: $black;
-  background: $white;
+  color: $white;
+  background: $black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,16 +48,28 @@ nav {
 
 .links {
   list-style-type: none;
+  display: flex;
+  
   .link {
     display: inline-block;
     margin: 5px;
-    a {
-      text-decoration: none;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      color: $white;
-      padding: .5rem;
-      transition: border .3s;
+    div {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      a {
+        text-decoration: none;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        color: $white;
+        padding: .5rem;
+        transition: border .3s;
+        display: flex;
+        align-self: center;
+        i {
+          font-size: 1.6rem;
+        }
+      }
     }
   }
   .link:hover {
@@ -151,9 +163,9 @@ main {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  border: 2px solid $black;
   justify-items: center;
   margin-bottom: 20vh;
+  box-shadow: 0 0 5px 5px $accent;
   .line {
     width: 6rem;
   }
@@ -165,7 +177,7 @@ main {
   max-height: 47rem;
   display: grid;
   grid-template-rows: minmax(100px, .66fr) 4px minmax(300px, 3fr) 4px minmax(150px, 1fr) minmax(150px, .5fr);
-  border-top: 2px solid $black;
+  border-top: 2px solid $accent;
   border-radius: 0 0 5px 5px;
   justify-items: center;
   h3 {
@@ -189,7 +201,7 @@ main {
       align-items: center;
       height: 100%;
       p {
-        color: $black;
+        color: $white;
         font-size: 1.5rem;
         text-align: left;
       }
@@ -197,7 +209,7 @@ main {
   }
   a {
     text-decoration: none;
-    color: $black;
+    color: $white;
   }
   .second {
     grid-row: 4 / 5;
@@ -228,7 +240,7 @@ main {
     align-self: center;
     grid-row: 6 / 7;
     i {
-      color: $black;
+      color: $white;
       font-size: 3rem;
       margin: 2rem;
       transition: transform 0.3s, color 0.3s;
@@ -257,7 +269,7 @@ main {
 #skills {
   width: 100vw;
   margin-bottom: 20vh;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient($dark, $accent);
   div {
     width: 100%;
     display: flex;
@@ -276,7 +288,6 @@ main {
   display: flex;
   justify-content: center;
   form {
-    background: rgba(0, 0, 0, 0.2);
     width: auto;
     height: 15rem;
     display: flex;
@@ -284,8 +295,16 @@ main {
     text-align: left;
     justify-content: center;
     padding: 2rem;
-    border: 2px solid $accent;
+    border: 2px solid $white;
     border-radius: 5px;
+    input {
+      background: $light;
+      color: $white;
+    }
+    textarea {
+      background: $light;
+      color: $white;
+    }
     div {
       width: 100%;
     }
@@ -298,6 +317,14 @@ main {
         input {
           padding: 10px;
           width: 14rem;
+          outline: 2px solid $white;
+          border: none;
+        }
+        input:focus {
+          outline: 2px solid $accent;
+          label {
+            color: $accent;
+          }
         }
       }
       #email-container {
@@ -310,6 +337,11 @@ main {
           input {
             padding: 10px;
             width: 14rem;
+            outline: 2px solid $white;
+            border: none;
+          }
+          input:focus {
+            outline: 2px solid $accent;
           }
         }
       }
@@ -321,6 +353,11 @@ main {
         width: 35rem;
         height: 4rem;
         resize: none;
+        outline: 2px solid $white;
+        border: none;
+      }
+      textarea:focus {
+        outline: 2px solid $accent;
       }
     }
     button {
@@ -328,6 +365,15 @@ main {
       justify-self: left;
       width: 100px;
       border-radius: 5px;
+      background: $black;
+      color: $white;
+      border-color: $white;
+      transition: background 0.3s;
+      padding: .5rem;
+    }
+    button:hover {
+      background: $light;
+      // transform: scale(1.1);
     }
   }
 }

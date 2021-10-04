@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  color: #07070a;
-  background: #dddddd;
+  color: #dddddd;
+  background: #07070a;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,18 +41,29 @@ nav .navbar {
 
 .links {
   list-style-type: none;
+  display: flex;
 }
 .links .link {
   display: inline-block;
   margin: 5px;
 }
-.links .link a {
+.links .link div {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.links .link div a {
   text-decoration: none;
   border: 1px solid transparent;
   border-radius: 5px;
   color: #dddddd;
   padding: 0.5rem;
   transition: border 0.3s;
+  display: flex;
+  align-self: center;
+}
+.links .link div a i {
+  font-size: 1.6rem;
 }
 .links .link:hover a {
   border: 1px solid #dddddd;
@@ -141,9 +152,9 @@ main h2 {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  border: 2px solid #07070a;
   justify-items: center;
   margin-bottom: 20vh;
+  box-shadow: 0 0 5px 5px #004ba8;
 }
 .project .line {
   width: 6rem;
@@ -155,7 +166,7 @@ main h2 {
   max-height: 47rem;
   display: grid;
   grid-template-rows: minmax(100px, 0.66fr) 4px minmax(300px, 3fr) 4px minmax(150px, 1fr) minmax(150px, 0.5fr);
-  border-top: 2px solid #07070a;
+  border-top: 2px solid #004ba8;
   border-radius: 0 0 5px 5px;
   justify-items: center;
 }
@@ -182,13 +193,13 @@ main h2 {
   height: 100%;
 }
 .project-info .description div p {
-  color: #07070a;
+  color: #dddddd;
   font-size: 1.5rem;
   text-align: left;
 }
 .project-info a {
   text-decoration: none;
-  color: #07070a;
+  color: #dddddd;
 }
 .project-info .second {
   grid-row: 4/5;
@@ -220,7 +231,7 @@ main h2 {
   grid-row: 6/7;
 }
 .project-info .project-links i {
-  color: #07070a;
+  color: #dddddd;
   font-size: 3rem;
   margin: 2rem;
   transition: transform 0.3s, color 0.3s;
@@ -247,7 +258,7 @@ main h2 {
 #skills {
   width: 100vw;
   margin-bottom: 20vh;
-  background: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(#24272b, #004ba8);
 }
 #skills div {
   width: 100%;
@@ -267,7 +278,6 @@ main h2 {
   justify-content: center;
 }
 #contact form {
-  background: rgba(0, 0, 0, 0.2);
   width: auto;
   height: 15rem;
   display: flex;
@@ -275,8 +285,16 @@ main h2 {
   text-align: left;
   justify-content: center;
   padding: 2rem;
-  border: 2px solid #004ba8;
+  border: 2px solid #dddddd;
   border-radius: 5px;
+}
+#contact form input {
+  background: #4a525a;
+  color: #dddddd;
+}
+#contact form textarea {
+  background: #4a525a;
+  color: #dddddd;
 }
 #contact form div {
   width: 100%;
@@ -292,6 +310,14 @@ main h2 {
 #contact form #name-email #name-container input {
   padding: 10px;
   width: 14rem;
+  outline: 2px solid #dddddd;
+  border: none;
+}
+#contact form #name-email #name-container input:focus {
+  outline: 2px solid #004ba8;
+}
+#contact form #name-email #name-container input:focus label {
+  color: #004ba8;
 }
 #contact form #name-email #email-container {
   display: flex;
@@ -305,6 +331,11 @@ main h2 {
 #contact form #name-email #email-container div input {
   padding: 10px;
   width: 14rem;
+  outline: 2px solid #dddddd;
+  border: none;
+}
+#contact form #name-email #email-container div input:focus {
+  outline: 2px solid #004ba8;
 }
 #contact form #contact-message {
   display: flex;
@@ -314,12 +345,25 @@ main h2 {
   width: 35rem;
   height: 4rem;
   resize: none;
+  outline: 2px solid #dddddd;
+  border: none;
+}
+#contact form #contact-message textarea:focus {
+  outline: 2px solid #004ba8;
 }
 #contact form button {
   margin-top: 1rem;
   justify-self: left;
   width: 100px;
   border-radius: 5px;
+  background: #07070a;
+  color: #dddddd;
+  border-color: #dddddd;
+  transition: background 0.3s;
+  padding: 0.5rem;
+}
+#contact form button:hover {
+  background: #4a525a;
 }
 
 @media screen and (max-width: 720px) {
